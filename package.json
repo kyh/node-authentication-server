@@ -9,8 +9,13 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Kai Yu Hsu <im.kaiyu@gmail.com> (http://kyh.io/)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tehkaiyu/node-authentication-server"
+  },
   "license": "MIT",
   "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
     "body-parser": "1.15.0",
     "express": "4.13.4",
     "mongoose": "4.4.13",
@@ -19,6 +24,8 @@
   },
   "devDependencies": {
     "eslint": "2.8.0",
-    "eslint-config-airbnb": "7.0.0"
+    "eslint-config-airbnb": "7.0.0",
+    "eslint-plugin-jsx-a11y": "0.6.2",
+    "eslint-plugin-react": "4.3.0"
   }
 }
