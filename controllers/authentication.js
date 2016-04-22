@@ -50,3 +50,8 @@ exports.signup = (req, res, next) => {
     });
   });
 };
+
+exports.signin = (req, res) => {
+  // User has already had theur email and password authenticated
+  res.send({ token: tokenizeUser(req.user) });
+};
