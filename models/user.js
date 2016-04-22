@@ -12,13 +12,16 @@ const userSchema = new Schema({
 userSchema.pre('save', function preSave(next) {
   const user = this;
 
+  // generate a salt then run callback
   return bcrypt.genSalt(10, (saltGenError, salt) => {
     if (saltGenError) { return next(saltGenError); }
 
+    // hash the password using the salt
     return bcrypt.hash(user.password, salt, null, (hashError, hash) => {
       if (hashError) { return next(hashError); }
-      user.password = hash;
 
+      // overwrite password with encrypted password
+      user.password = hash;
       return next();
     });
   });
