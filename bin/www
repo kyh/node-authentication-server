@@ -1,0 +1,14 @@
+#!/usr/bin/env node
+const http = require('http');
+const app = require('../app');
+
+const port = process.env.PORT || 3030;
+const server = http.createServer(app);
+
+server.listen(port, (err) => {
+  if (err) {
+    console.error(err);
+  }
+
+  console.info(`Express server listening on port: ${port}`);
+});
